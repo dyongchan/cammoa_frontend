@@ -1,3 +1,6 @@
 // Font
-$default-font-family: 'Pretendard Variable';
+$background-color: #fff;
+$font-base-color: #333;
+
+$default-font-family: 'Pretendard Variable'; //기본 폰트
 $font-base-size: clamp(14px, 1vw, 18px); // 최소값: 14px, 유동값: 1vw(뷰포트의 1%), 최대값: 18px
