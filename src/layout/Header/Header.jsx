@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import SearchBar from '@layout/SearchBar/SearchBar';
 
 const Header = () => {
   return (
@@ -9,7 +10,7 @@ const Header = () => {
       </AccountArea>
       <MainHeader>
         <Logo></Logo>
-        <SearchContainer></SearchContainer>
+        <SearchBar></SearchBar>
         <MainText></MainText>
       </MainHeader>
       <div></div>
@@ -61,13 +62,7 @@ const Logo = styled.div`
 
   background-color: skyblue;
 `;
-const SearchContainer = styled.div`
-  width: 470px;
-  height: 65px;
-  padding: 12px 17px;
 
-  background-color: skyblue;
-`;
 const MainText = styled.div`
   width: 265px;
   height: 65px;
