@@ -1,8 +1,35 @@
 @use 'variables' as v;
+@use 'responsive' as *;
+
+html {
+  @include responsive(small-mobile) {
+    font-size: 87.5%; /* 14px */
+  }
+
+  @include responsive(mobile) {
+    font-size: 93.75%; /* 15px */
+  }
+
+  @include responsive(tablet) {
+    font-size: 100%; /* 16px */
+  }
+
+  @include responsive(desktop) {
+    font-size: 100%; /* 16px */
+  }
+
+  @include responsive(large-desktop) {
+    font-size: 112.5%; /* 18px */
+  }
+}
 
 body {
   font-family: v.$default-font-family;
 
   background-color: v.$background-color;
   color: v.$font-base-color;
+
+  @media (max-width: 480px) {
+    padding-top: 80px;
+  }
 }
