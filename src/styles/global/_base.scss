@@ -28,8 +28,4 @@ body {
 
   background-color: v.$background-color;
   color: v.$font-base-color;
-
-  @media (max-width: 480px) {
-    padding-top: 80px;
-  }
 }
