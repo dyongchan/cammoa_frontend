@@ -44,6 +44,7 @@ const HeaderContainer = styled.header`
   height: 155px;
   position: fixed;
   z-index: 100;
+  background-color: white;
 
   display: flex;
   flex-direction: column;
