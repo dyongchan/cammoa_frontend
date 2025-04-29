@@ -40,7 +40,6 @@ export default Header;
 
 const HeaderContainer = styled.header`
   width: 100%;
-  padding: 10px 435px;
   height: 155px;
   position: fixed;
   z-index: 100;
@@ -55,7 +54,7 @@ const HeaderContainer = styled.header`
 `;
 
 const AccountArea = styled.div`
-  width: 1080px;
+  width: 1065px;
   height: ${pxToRem(35)};
   padding: ${pxToRem(12)} ${pxToRem(5)};
   white-space: nowrap;
@@ -79,14 +78,14 @@ const Divider = styled.span`
 `;
 
 const MainHeader = styled.div`
-  width: fit-content;
+  width: 1065px;
   height: ${pxToRem(65)};
-  padding: ${pxToRem(12)} ${pxToRem(2)};
+  padding: ${pxToRem(12)} 0;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 65px;
+  gap: 55px;
 `;
 
 const Logo = styled.div`
@@ -117,7 +116,7 @@ const FeatureText = styled.p`
 `;
 
 const CategoryContainer = styled.div`
-  width: 1080px;
+  width: 1065px;
   height: ${pxToRem(55)};
   white-space: nowrap;
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Container, Header } from '@components/shared/UIStyles';
 import BannerIcon from '@assets/icons/png/banner.png';
 import { mockPosts } from '@pages/Home/MockData/MockData';
 import Items from '@components/Home/Items';
@@ -9,69 +10,74 @@ const Home = () => {
       <BannerContainer>
         <BannerImage src={BannerIcon} alt="banner" />
       </BannerContainer>
-      <TodayRecommendContainer>
-        <TodayRecommendHeader>
+      <RecommendContainer>
+        <RecommendHeader>
           <HeaderMainText>🛒오늘의 공동구매 추천</HeaderMainText>
           <HeaderSubText>똑똑한 쇼핑의 시작, 오늘의 추천템!</HeaderSubText>
-        </TodayRecommendHeader>
-        <TodayRecommendMain>
+        </RecommendHeader>
+        <RecommendMain>
           {mockPosts.map((post) => (
             <Items key={post.id} title={post.title} price={post.price} imageUrl={post.imageUrl} />
           ))}
-        </TodayRecommendMain>
-      </TodayRecommendContainer>
-      <ClosingItemsContainer>
-        <ClosingItemsHeader></ClosingItemsHeader>
-      </ClosingItemsContainer>
+        </RecommendMain>
+      </RecommendContainer>
+      <RecommendContainer>
+        <RecommendHeader>
+          <HeaderMainText>⏳ 서두르세요! 곧 마감되는 공구</HeaderMainText>
+          <HeaderSubText>기회를 놓치지 마세요, 곧 종료됩니다!</HeaderSubText>
+        </RecommendHeader>
+        <RecommendMain>
+          {mockPosts.slice(0, 4).map((post) => (
+            <Items key={post.id} title={post.title} price={post.price} imageUrl={post.imageUrl} />
+          ))}
+        </RecommendMain>
+      </RecommendContainer>
+      <RecommendContainer>
+        <RecommendHeader>
+          <HeaderMainText>🔥 방금 올라온 따끈한 공구!</HeaderMainText>
+          <HeaderSubText>최신 공동구매, 가장 먼저 만나보세요!</HeaderSubText>
+        </RecommendHeader>
+        <RecommendMain>
+          {mockPosts.slice(0, 4).map((post) => (
+            <Items key={post.id} title={post.title} price={post.price} imageUrl={post.imageUrl} />
+          ))}
+        </RecommendMain>
+      </RecommendContainer>
     </HomeContainer>
   );
 };
 
 export default Home;
 
-const HomeContainer = styled.div`
+const HomeContainer = styled(Container)`
   width: 100%;
   padding: 155px 0;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 10px;
-  z-index: 0;
 `;
 
-const BannerContainer = styled.div`
+const BannerContainer = styled(Container)`
   width: 1065px;
   padding-top: 10px;
   margin-bottom: 10px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 const BannerImage = styled.img`
   width: 100%;
   height: fit-content;
 `;
 
-const TodayRecommendContainer = styled.div`
+const RecommendContainer = styled(Container)`
   width: 1065px;
   padding: 40px 0;
 
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  gap: 10px;
 `;
-const TodayRecommendHeader = styled.div`
+const RecommendHeader = styled(Header)`
   width: 100%;
   height: 75px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  gap: 10px;
+  align-items: flex-start;
 `;
 const HeaderMainText = styled.p`
   ${({ theme }) => theme.fontStyles.Body2};
@@ -84,21 +90,10 @@ const HeaderSubText = styled.p`
   line-height: 145%;
 `;
 
-const TodayRecommendMain = styled.div`
+const RecommendMain = styled(Container)`
   width: fit-content;
 
-  display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
   flex-wrap: wrap;
-
   gap: 25px;
 `;
-
-const ClosingItemsContainer = styled.div`
-  width: 1065px;
-  padding: 40px 0;
-
-  display: flex;
-  flex-direction: column;
-`;
-const ClosingItemsHeader = styled.div``;
