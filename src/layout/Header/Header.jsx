@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Container } from '@components/shared/UIStyles';
 import SearchBar from '@layout/SearchBar/SearchBar';
 import pxToRem from '@utils/pxToRem';
 import CategoryIcon from '@assets/icons/category-icon.svg?react';
@@ -38,30 +39,26 @@ const Header = () => {
 
 export default Header;
 
-const HeaderContainer = styled.header`
+const HeaderContainer = styled(Container)`
   width: 100%;
   height: 155px;
   position: fixed;
+  top: 0;
   z-index: 100;
   background-color: white;
 
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-
   box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.07);
 `;
 
-const AccountArea = styled.div`
+const AccountArea = styled(Container)`
   width: 1065px;
   height: ${pxToRem(35)};
   padding: ${pxToRem(12)} ${pxToRem(5)};
   white-space: nowrap;
 
-  display: flex;
+  flex-direction: row;
   justify-content: flex-end;
-  align-items: center;
   gap: 12px;
 `;
 
@@ -77,14 +74,13 @@ const Divider = styled.span`
   background-color: #d9d9d9;
 `;
 
-const MainHeader = styled.div`
+const MainHeader = styled(Container)`
   width: 1065px;
   height: ${pxToRem(65)};
   padding: ${pxToRem(12)} 0;
 
-  display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
   gap: 55px;
 `;
 
@@ -96,12 +92,11 @@ const Logo = styled.div`
   flex-shrink: 0;
 `;
 
-const FeaturePanel = styled.div`
+const FeaturePanel = styled(Container)`
   height: ${pxToRem(65)};
 
-  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   white-space: nowrap;
   gap: ${pxToRem(24)};
 
@@ -115,12 +110,12 @@ const FeatureText = styled.p`
   font-weight: 700;
 `;
 
-const CategoryContainer = styled.div`
+const CategoryContainer = styled(Container)`
   width: 1065px;
   height: ${pxToRem(55)};
   white-space: nowrap;
 
-  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   gap: 145px;
 `;
@@ -141,11 +136,10 @@ const GroupPurchase = styled.div`
   height: ${pxToRem(56)};
 
   display: flex;
-  flex-
   justify-content: center;
   align-items: center;
-  
-  gap:${pxToRem(88)};
+
+  gap: ${pxToRem(88)};
 `;
 const CategoryText = styled.p`
   ${({ theme }) => {
