@@ -35,8 +35,8 @@ const bodyStyles = {
   Body6: css`
     ${bodyBaseFontStyles}
     font-size: ${pxToRem(16)};
-    font-weight: 700;
-    letter-space: -0.3px;
+    font-weight: 400;
+    letter-space: -0.2px;
   `,
   Body7: css`
     ${bodyBaseFontStyles}
