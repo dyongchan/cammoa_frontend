@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import BannerIcon from '@assets/icons/png/banner.png';
 import { mockPosts } from '@pages/Home/MockData/MockData';
-import Items from '@components/Items';
+import Items from '@components/Home/Items';
 
 const Home = () => {
   return (
@@ -20,6 +20,9 @@ const Home = () => {
           ))}
         </TodayRecommendMain>
       </TodayRecommendContainer>
+      <ClosingItemsContainer>
+        <ClosingItemsHeader></ClosingItemsHeader>
+      </ClosingItemsContainer>
     </HomeContainer>
   );
 };
@@ -38,8 +41,7 @@ const HomeContainer = styled.div`
 `;
 
 const BannerContainer = styled.div`
-  width: 1100px;
-  height: fit-content;
+  width: 1065px;
   padding-top: 10px;
   margin-bottom: 10px;
 
@@ -53,7 +55,7 @@ const BannerImage = styled.img`
 `;
 
 const TodayRecommendContainer = styled.div`
-  width: 1100px;
+  width: 1065px;
   padding: 40px 0;
 
   display: flex;
@@ -83,8 +85,20 @@ const HeaderSubText = styled.p`
 `;
 
 const TodayRecommendMain = styled.div`
-  width: 100%;
+  width: fit-content;
 
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+
+  gap: 25px;
 `;
+
+const ClosingItemsContainer = styled.div`
+  width: 1065px;
+  padding: 40px 0;
+
+  display: flex;
+  flex-direction: column;
+`;
+const ClosingItemsHeader = styled.div``;
