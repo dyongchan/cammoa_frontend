@@ -1,10 +1,14 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 import { Container } from '@components/shared/UIStyles';
 import SearchBar from '@layout/SearchBar/SearchBar';
 import pxToRem from '@utils/pxToRem';
-import CategoryIcon from '@assets/icons/category-icon.svg?react';
+import CategoryIcon from '@assets/icons/category/category-icon.svg?react';
+import UserMenuDropdown from '@components/UserMenuDropdown/UserMenuDropdown';
 
 const Header = () => {
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+
   return (
     <HeaderContainer>
       <AccountArea>
@@ -24,10 +28,12 @@ const Header = () => {
         </FeaturePanel>
       </MainHeader>
       <CategoryContainer>
-        <Category>
+        <Category onClick={() => setIsCategoryOpen((o) => !o)}>
           <CategoryMarker />
           <CategoryText>카테고리</CategoryText>
         </Category>
+        {isCategoryOpen && <UserMenuDropdown />}
+
         <GroupPurchase>
           <CategoryText>곧 마감 공구</CategoryText>
           <CategoryText>최신 공구</CategoryText>
@@ -114,6 +120,7 @@ const CategoryContainer = styled(Container)`
   width: 1065px;
   height: ${pxToRem(55)};
   white-space: nowrap;
+  position: relative;
 
   flex-direction: row;
   justify-content: flex-start;
@@ -126,6 +133,8 @@ const Category = styled.div`
 
   display: flex;
   align-items: center;
+
+  cursor: pointer;
 `;
 const CategoryMarker = styled(CategoryIcon)`
   margin-right: 14px;

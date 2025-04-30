@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 export function ModalPortal({ children }) {
   const el = document.getElementById('modal');
-  return el ? ReactDOM.createPortal(children, el) : null;
+  if (!el) {
+    console.error("Modal container with id 'modal' not found!");
+    return null;
+  }
+  return ReactDOM.createPortal(children, el);
 }
 
 ModalPortal.propTypes = {
