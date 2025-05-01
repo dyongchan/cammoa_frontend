@@ -15,7 +15,6 @@ export default SearchPage;
 
 const SearchContainer = styled(PageWrapper)`
   margin-top: 45px;
-
   gap: 45px;
 `;
 
