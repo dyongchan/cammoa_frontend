@@ -1,12 +1,28 @@
-import { PageWrapper, Container } from '@components/shared/UIStyles';
 import styled from 'styled-components';
+import { PageWrapper, Container } from '@components/shared/UIStyles';
+import { useSearchParams } from 'react-router';
+import { useState, useEffect } from 'react';
+import { mockItems } from '@components/SearchItem/Mock/SearchItemData';
+import SearchItem from '@components/SearchItem/SearchItem';
 
 const SearchPage = () => {
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('query') || '';
+
+  const [searchData, setSearchData] = useState([]);
+
+  useEffect(() => {
+    if (!query) return;
+
+    setSearchData(mockItems);
+  }, [query]);
+
   return (
     <SearchContainer>
       <SearchHeader>
         <HeaderSubText>공동구매들을 발견했어요!</HeaderSubText>
       </SearchHeader>
+      <SearchItem query={query} searchedResult={searchData} />
     </SearchContainer>
   );
 };

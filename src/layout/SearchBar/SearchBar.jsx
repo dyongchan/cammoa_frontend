@@ -56,4 +56,6 @@ const SearchButton = styled(Magnifier)`
   height: fit-content;
   position: absolute;
   right: 17px;
+
+  cursor: pointer;
 `;
